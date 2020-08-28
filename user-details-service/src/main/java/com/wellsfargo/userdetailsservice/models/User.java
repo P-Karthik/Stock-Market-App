@@ -1,7 +1,5 @@
 package com.wellsfargo.userdetailsservice.models;
 
-import java.util.Arrays;
-import java.util.Collection;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -10,13 +8,9 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-import org.springframework.security.core.GrantedAuthority;
-import org.springframework.security.core.authority.SimpleGrantedAuthority;
-import org.springframework.security.core.userdetails.UserDetails;
-
 @Entity
 @Table(name="usertable")
-public class User implements UserDetails {
+public class User{
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
@@ -70,36 +64,7 @@ public class User implements UserDetails {
 	public void setConfirmed(Boolean confirmed) {
 		this.confirmed = confirmed;
 	}
-	@Override
-	public Collection<? extends GrantedAuthority> getAuthorities() {
-		// TODO Auto-generated method stub
-		if(!isAdmin)
-			return Arrays.asList(new SimpleGrantedAuthority("ROLE_USER"));
-		else
-			return Arrays.asList(new SimpleGrantedAuthority("ROLE_ADMIN"));
-	}
-	@Override
-	public boolean isAccountNonExpired() {
-		// TODO Auto-generated method stub
-		return confirmed;
-	}
-	@Override
-	public boolean isAccountNonLocked() {
-		// TODO Auto-generated method stub
-		return confirmed;
-	}
-	@Override
-	public boolean isCredentialsNonExpired() {
-		// TODO Auto-generated method stub
-		return confirmed;
-	}
-	@Override
-	public boolean isEnabled() {
-		// TODO Auto-generated method stub
-		return confirmed;
-	}
-	
-	
+
 	
 }
 
