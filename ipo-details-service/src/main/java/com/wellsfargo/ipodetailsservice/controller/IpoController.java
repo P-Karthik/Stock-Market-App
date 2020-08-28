@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.client.RestTemplate;
 
 import com.wellsfargo.ipodetailsservice.models.IPO;
 import com.wellsfargo.ipodetailsservice.service.IpoService;
@@ -18,6 +19,9 @@ public class IpoController {
 	
 	@Autowired
 	private IpoService ipoService;
+	
+	@Autowired
+	private RestTemplate restTemplate;
 	
 	@RequestMapping("/ipos")
 	public List<IPO> getallIpos(){
@@ -48,8 +52,17 @@ public class IpoController {
 	}
 	
 	@RequestMapping(method=RequestMethod.DELETE,value="/ipos/delete/{id}")
-	public void updateIpo(@PathVariable long id) {
+	public void deleteIpo(@PathVariable long id) {
 		ipoService.deleteIpoDetails(id);
 	}
+	
+	@RequestMapping(method=RequestMethod.DELETE,value="/ipos/delete/by_company_name")
+	public void deleteIpoByCompanyName(@RequestBody String company_name) {
+		ipoService.deleteIpoDetailsByCompanyName(company_name);
+	}
+	
+	
+	
+	
 	
 }

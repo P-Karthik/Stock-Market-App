@@ -9,6 +9,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinTable;
+//import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -17,31 +18,37 @@ public class Company {
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
-	private int company_id;
+	private int companyId;
 	@Column(unique=true)
-	private String company_name;
+	private String companyName;
 	private double turnover;
 	private String ceo;
 	
 	@ElementCollection
 	@JoinTable(name="company_bod")
-	private List<String> board_of_directors;
+	private List<String> boardOfDirectors;
 	private String sector;
 	private String about;
 	@Column(unique=true)
-	private String company_code;
-
-	public int getCompany_id() {
-		return company_id;
+	private String companyCode;
+	//@OneToMany
+	//private List<StockExchange> seList;
+	
+	public Company() {
+		
 	}
-	public void setCompany_id(int company_id) {
-		this.company_id = company_id;
+	
+	public int getCompanyId() {
+		return companyId;
 	}
-	public String getCompany_name() {
-		return company_name;
+	public void setCompanyId(int companyId) {
+		this.companyId = companyId;
 	}
-	public void setCompany_name(String company_name) {
-		this.company_name = company_name;
+	public String getCompanyName() {
+		return companyName;
+	}
+	public void setCompanyName(String companyName) {
+		this.companyName = companyName;
 	}
 	public double getTurnover() {
 		return turnover;
@@ -55,11 +62,11 @@ public class Company {
 	public void setCeo(String ceo) {
 		this.ceo = ceo;
 	}
-	public List<String> getBoard_of_directors() {
-		return board_of_directors;
+	public List<String> getBoardOfDirectors() {
+		return boardOfDirectors;
 	}
-	public void setBoard_of_directors(List<String> board_of_directors) {
-		this.board_of_directors = board_of_directors;
+	public void setBoardOfDirectors(List<String> boardOfDirectors) {
+		this.boardOfDirectors = boardOfDirectors;
 	}
 	public String getSector() {
 		return sector;
@@ -73,10 +80,11 @@ public class Company {
 	public void setAbout(String about) {
 		this.about = about;
 	}
-	public String getCompany_code() {
-		return company_code;
+	public String getCompanyCode() {
+		return companyCode;
 	}
-	public void setCompany_code(String company_code) {
-		this.company_code = company_code;
+	public void setCompanyCode(String companyCode) {
+		this.companyCode = companyCode;
 	}
+
 }

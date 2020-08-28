@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.client.RestTemplate;
 
 import com.wellsfargo.userdetailsservice.models.User;
 import com.wellsfargo.userdetailsservice.service.UserService;
@@ -19,6 +20,9 @@ public class UserController {
 	
 	@Autowired
 	private UserService userService;
+	
+	@Autowired
+	private RestTemplate restTemplate;
 	
 	@RequestMapping("/users")
 	public List<User> getAllUsers(){

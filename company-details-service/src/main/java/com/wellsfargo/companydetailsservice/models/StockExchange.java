@@ -15,33 +15,39 @@ public class StockExchange {
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private int id;
 	@Column(unique=true)
-	private String se_name;
+	private String seName;
 	private String about;
-	private String contact_address;
+	private String contactAddress;
 	private String remarks;
+	
+	public StockExchange() {
+		
+	}
 	public int getId() {
 		return id;
 	}
 	public void setId(int id) {
 		this.id = id;
 	}
-	public String getSe_name() {
-		return se_name;
-	}
-	public void setSe_name(String se_name) {
-		this.se_name = se_name;
-	}
+	
 	public String getAbout() {
 		return about;
 	}
 	public void setAbout(String about) {
 		this.about = about;
 	}
-	public String getContact_address() {
-		return contact_address;
+	
+	public String getSeName() {
+		return seName;
 	}
-	public void setContact_address(String contact_address) {
-		this.contact_address = contact_address;
+	public void setSeName(String seName) {
+		this.seName = seName;
+	}
+	public String getContactAddress() {
+		return contactAddress;
+	}
+	public void setContactAddress(String contactAddress) {
+		this.contactAddress = contactAddress;
 	}
 	public String getRemarks() {
 		return remarks;

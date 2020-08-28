@@ -2,52 +2,72 @@ package com.wellsfargo.companydetailsservice.models;
 
 import java.sql.Date;
 import java.sql.Time;
+import java.sql.Timestamp;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
 @Table(name="stock_price")
 public class StockPrice {
 	
-	@Column(unique=true)
-	private String company_code;
-	@Column(unique=true)
-	private String se_name;
-	private double current_price;
-	private Date date;
-	private Time time;
-	public String getCompany_code() {
-		return company_code;
+	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	private long id;
+	private String companyCode;
+	private String seName;
+	private double currentPrice;
+	private Timestamp date;
+	
+	public StockPrice() {
+		
 	}
-	public void setCompany_code(String company_code) {
-		this.company_code = company_code;
+
+	public long getId() {
+		return id;
 	}
-	public String getSe_name() {
-		return se_name;
+
+	public void setId(long id) {
+		this.id = id;
 	}
-	public void setSe_name(String se_name) {
-		this.se_name = se_name;
+
+	public String getCompanyCode() {
+		return companyCode;
 	}
-	public double getCurrent_price() {
-		return current_price;
+
+	public void setCompanyCode(String companyCode) {
+		this.companyCode = companyCode;
 	}
-	public void setCurrent_price(double current_price) {
-		this.current_price = current_price;
+
+	public String getSeName() {
+		return seName;
 	}
-	public Date getDate() {
+
+	public void setSeName(String seName) {
+		this.seName = seName;
+	}
+
+	public double getCurrentPrice() {
+		return currentPrice;
+	}
+
+	public void setCurrentPrice(double currentPrice) {
+		this.currentPrice = currentPrice;
+	}
+
+	public Timestamp getDate() {
 		return date;
 	}
-	public void setDate(Date date) {
+
+	public void setDate(Timestamp date) {
 		this.date = date;
 	}
-	public Time getTime() {
-		return time;
-	}
-	public void setTime(Time time) {
-		this.time = time;
-	}
+
+
 	
 	
 

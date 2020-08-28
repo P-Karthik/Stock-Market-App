@@ -47,5 +47,9 @@ public class IpoService {
 	public void deleteIpoDetails(long id) {
 		ipoRepo.deleteById(id);
 	}
+	
+	public void deleteIpoDetailsByCompanyName(String company_name) {
+		ipoRepo.deleteByCompanyName(company_name);
+	}
 		
 }

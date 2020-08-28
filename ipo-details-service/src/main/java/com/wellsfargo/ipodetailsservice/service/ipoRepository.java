@@ -12,5 +12,5 @@ public interface ipoRepository extends CrudRepository<IPO,Long> {
 
 	List<IPO> findByCompanyNameAndSeName(String company_name,String se_name);
 	List<IPO> findByCompanyNameAndSeNameOrderByOpenDateTimeAsc(String company_name,String se_name);
-
+	void deleteByCompanyName(String company_name);
 }

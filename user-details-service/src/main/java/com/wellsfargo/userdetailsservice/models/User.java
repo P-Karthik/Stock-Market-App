@@ -22,6 +22,10 @@ public class User{
 	private String email;
 	private String mobile;
 	private Boolean confirmed;
+	
+	public User() {
+		
+	}
 	public int getId() {
 		return id;
 	}

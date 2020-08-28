@@ -23,6 +23,9 @@ public class IPO {
 	private Timestamp openDateTime;
 	private String remarks;
 	
+	public IPO() {
+		
+	}
 	public long getId() {
 		return id;
 	}
