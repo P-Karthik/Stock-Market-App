@@ -14,16 +14,14 @@ import javax.persistence.Table;
 public class IPO {
 	
 	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private long id;
-	@Column(unique=true)
-	private String company_name;
-	@Column(unique=true)
-	private String se_name;
-	private double price_per_share;
-	private double total_shares;
-	private Timestamp open_date_time;
-	
+	private String companyName;
+	private String seName;
+	private double pricePerShare;
+	private double totalShares;
+	private Timestamp openDateTime;
+	private String remarks;
 	
 	public long getId() {
 		return id;
@@ -31,35 +29,42 @@ public class IPO {
 	public void setId(long id) {
 		this.id = id;
 	}
-	public String getCompany_name() {
-		return company_name;
+	public String getCompanyName() {
+		return companyName;
 	}
-	public void setCompany_name(String company_name) {
-		this.company_name = company_name;
+	public void setCompanyName(String companyName) {
+		this.companyName = companyName;
 	}
-	public String getSe_name() {
-		return se_name;
+	public String getSeName() {
+		return seName;
 	}
-	public void setSe_name(String se_name) {
-		this.se_name = se_name;
+	public void setSeName(String seName) {
+		this.seName = seName;
 	}
-	public double getPrice_per_share() {
-		return price_per_share;
+	public double getPricePerShare() {
+		return pricePerShare;
 	}
-	public void setPrice_per_share(double price_per_share) {
-		this.price_per_share = price_per_share;
+	public void setPricePerShare(double pricePerShare) {
+		this.pricePerShare = pricePerShare;
 	}
-	public double getTotal_shares() {
-		return total_shares;
+	public double getTotalShares() {
+		return totalShares;
 	}
-	public void setTotal_shares(double total_shares) {
-		this.total_shares = total_shares;
+	public void setTotalShares(double totalShares) {
+		this.totalShares = totalShares;
 	}
-	public Timestamp getOpen_date_time() {
-		return open_date_time;
+	public Timestamp getOpenDateTime() {
+		return openDateTime;
 	}
-	public void setOpen_date_time(Timestamp open_date_time) {
-		this.open_date_time = open_date_time;
+	public void setOpenDateTime(Timestamp openDateTime) {
+		this.openDateTime = openDateTime;
 	}
-
+	public String getRemarks() {
+		return remarks;
+	}
+	public void setRemarks(String remarks) {
+		this.remarks = remarks;
+	}
+	
+	
 }
