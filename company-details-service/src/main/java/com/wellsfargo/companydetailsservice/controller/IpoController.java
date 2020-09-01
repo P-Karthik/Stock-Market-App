@@ -34,6 +34,11 @@ public class IpoController {
 		return ipoService.getsortedIpoDetailsFromCompanyName(companyName);
 	}
 	
+	@RequestMapping(method=RequestMethod.POST,value="/ipos/se/")
+	public List<IPO> getallIposBySeName(@RequestBody String se_name){
+		return ipoService.getIpoDetailsFromSeName(se_name);
+	}
+	
 	@RequestMapping(method=RequestMethod.POST,value="/ipos/se/company")
 	public List<IPO> getallIposByCompanyNameAndSeName(@RequestBody JSONObject param){
 		String companyName=(String)param.get("companyName");

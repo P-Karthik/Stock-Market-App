@@ -28,6 +28,10 @@ public class IpoService {
 		return ipoRepo.findByCompanyName(company_name);
 	}
 	
+	public List<IPO> getIpoDetailsFromSeName(String se_name) {
+		return ipoRepo.findBySeName(se_name);
+	}
+	
 	public List<IPO> getIpoDetailsFromCompanyNameAndSeName(String company_name,String se_name) {
 		return ipoRepo.findByCompanyNameAndSeName(company_name,se_name);
 	}
