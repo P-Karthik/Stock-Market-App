@@ -1,12 +1,13 @@
-package com.wellsfargo.companydetailsservice.service;
+package com.wellsfargo.stockexchangeservice.service;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import com.wellsfargo.companydetailsservice.models.StockExchange;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import com.wellsfargo.stockexchangeservice.models.StockExchange;
 
 @Service
 public class StockExchangeService {

@@ -1,11 +1,11 @@
-package com.wellsfargo.companydetailsservice.controller;
+package com.wellsfargo.stockexchangeservice.controller;
 
 import java.util.List;
 
 import javax.transaction.Transactional;
 
-import com.wellsfargo.companydetailsservice.models.StockExchange;
-import com.wellsfargo.companydetailsservice.service.StockExchangeService;
+import com.wellsfargo.stockexchangeservice.models.StockExchange;
+import com.wellsfargo.stockexchangeservice.service.StockExchangeService;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;

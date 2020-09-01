@@ -1,4 +1,4 @@
-package com.wellsfargo.companydetailsservice.models;
+package com.wellsfargo.stockexchangeservice.models;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -12,7 +12,7 @@ import javax.persistence.Table;
 public class StockExchange {
 	
 	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int id;
 	@Column(unique=true)
 	private String seName;

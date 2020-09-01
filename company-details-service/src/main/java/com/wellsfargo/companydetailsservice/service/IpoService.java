@@ -1,4 +1,4 @@
-package com.wellsfargo.ipodetailsservice.service;
+package com.wellsfargo.companydetailsservice.service;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -6,7 +6,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.wellsfargo.ipodetailsservice.models.IPO;
+import com.wellsfargo.companydetailsservice.models.IPO;
 
 @Service
 public class IpoService {

@@ -17,7 +17,7 @@ import javax.persistence.Table;
 public class Company {
 	
 	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int companyId;
 	@Column(unique=true)
 	private String companyName;

@@ -1,4 +1,4 @@
-package com.wellsfargo.ipodetailsservice.controller;
+package com.wellsfargo.companydetailsservice.controller;
 
 import java.util.List;
 
@@ -11,8 +11,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
 
-import com.wellsfargo.ipodetailsservice.models.IPO;
-import com.wellsfargo.ipodetailsservice.service.IpoService;
+import com.wellsfargo.companydetailsservice.models.IPO;
+import com.wellsfargo.companydetailsservice.service.IpoService;
 
 @RestController
 public class IpoController {

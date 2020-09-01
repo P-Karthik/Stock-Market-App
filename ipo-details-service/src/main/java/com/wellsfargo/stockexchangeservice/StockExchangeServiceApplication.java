@@ -1,4 +1,4 @@
-package com.wellsfargo.ipodetailsservice;
+package com.wellsfargo.stockexchangeservice;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -6,7 +6,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.web.client.RestTemplate;
 
 @SpringBootApplication
-public class IpoDetailsServiceApplication {
+public class StockExchangeServiceApplication {
 
 	@Bean
 	public RestTemplate getRestTemplate() {
@@ -14,7 +14,7 @@ public class IpoDetailsServiceApplication {
 	}
 	
 	public static void main(String[] args) {
-		SpringApplication.run(IpoDetailsServiceApplication.class, args);
+		SpringApplication.run(StockExchangeServiceApplication.class, args);
 	}
 
 }

@@ -1,10 +1,10 @@
-package com.wellsfargo.ipodetailsservice.service;
+package com.wellsfargo.companydetailsservice.service;
 
 import java.util.List;
 
 import org.springframework.data.repository.CrudRepository;
 
-import com.wellsfargo.ipodetailsservice.models.IPO;
+import com.wellsfargo.companydetailsservice.models.IPO;
 
 public interface ipoRepository extends CrudRepository<IPO,Long> {
 	List<IPO> findByCompanyName(String company_name);

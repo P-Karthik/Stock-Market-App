@@ -1,8 +1,9 @@
-package com.wellsfargo.companydetailsservice.service;
+package com.wellsfargo.stockexchangeservice.service;
 
 import org.springframework.data.repository.CrudRepository;
 
-import com.wellsfargo.companydetailsservice.models.StockExchange;
+import com.wellsfargo.stockexchangeservice.models.StockExchange;
+
 
 public interface StockExchangeRepository extends CrudRepository<StockExchange, Integer>{
 
