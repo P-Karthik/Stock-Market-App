@@ -6,6 +6,7 @@ import javax.transaction.Transactional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -53,7 +54,7 @@ public class UserController {
 	public void addUser(@PathVariable String username) {
 		userService.deleteUserByUsername(username);
 	}
-		
+	
 	@RequestMapping(method=RequestMethod.POST,value="/authenticate")
 	public boolean authenticate(@RequestBody List<String> l) {
 		String username=l.get(0);

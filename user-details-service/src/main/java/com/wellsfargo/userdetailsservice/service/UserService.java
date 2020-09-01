@@ -32,7 +32,7 @@ public class UserService{
 	}
 	
 	public User getUserByUsername(String username) {
-		return userRepo.findByUsername(username);
+		return userRepo.findByUsername(username).orElse(null);
 	}
 	
 	public void deleteUser(int id) {
