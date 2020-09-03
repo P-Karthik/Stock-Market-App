@@ -1,15 +1,21 @@
 package com.wellsfargo.userdetailsservice.service;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
 import com.wellsfargo.userdetailsservice.models.User;
 
 @Service
-public class UserService{
+public class UserService implements UserDetailsService{
 	
 	@Autowired
 	private UserRepository userRepo;
@@ -31,8 +37,11 @@ public class UserService{
 		return userRepo.findById(id).orElse(null);
 	}
 	
-	public User getUserByUsername(String username) {
-		return userRepo.findByUsername(username).orElse(null);
+	public User getUserByUsername(String username) throws UsernameNotFoundException{
+		User u=userRepo.findByUsername(username);
+		if(u!=null)
+			return u;
+		else throw new UsernameNotFoundException("Username not found");
 	}
 	
 	public void deleteUser(int id) {
@@ -41,5 +50,19 @@ public class UserService{
 	
 	public void deleteUserByUsername(String name) {
 		userRepo.deleteByUsername(name);
+	}
+
+
+	@Override
+	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
+		
+		User u= getUserByUsername(username);
+		GrantedAuthority authority;
+		if(u.getIsAdmin()==true)
+			authority=new SimpleGrantedAuthority("ROLE_ADMIN");
+		else
+			authority=new SimpleGrantedAuthority("ROLE_USER");
+		return new org.springframework.security.core.userdetails.User(u.getUsername(), u.getPassword(), Arrays.asList(authority));
+
 	}
 }
