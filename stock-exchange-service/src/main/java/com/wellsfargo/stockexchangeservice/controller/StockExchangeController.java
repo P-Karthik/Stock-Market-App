@@ -41,13 +41,13 @@ public class StockExchangeController {
         stockExchangeService.updateStockExchange(stockExchange);
     }
     
-    @GetMapping(value = "/se/{id}")
-    public StockExchange getStockExchangeyByName(@PathVariable int id) {
+    @GetMapping(value = "/se/id/{id}")
+    public StockExchange getStockExchangeBySeId(@PathVariable int id) {
         return stockExchangeService.getStockExchangeById(id);
     }
 
-    @GetMapping(value = "/se/{se_name}")
-    public StockExchange getStockExchangeyByName(@PathVariable String se_name) {
+    @PostMapping(value = "/se/name/")
+    public StockExchange getStockExchangeByName(@RequestBody String se_name) {
         return stockExchangeService.getStockExchangeByName(se_name);
     }
     

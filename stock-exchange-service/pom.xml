@@ -9,7 +9,7 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.wellsfargo</groupId>
-	<artifactId>ipo-details-service</artifactId>
+	<artifactId>stock-exchange-service</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>ipo-details-service</name>
 	<description>This microservice is used to get/update any IPO details of companies</description>
