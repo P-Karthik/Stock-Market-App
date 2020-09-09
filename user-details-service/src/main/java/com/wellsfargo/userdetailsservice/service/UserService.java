@@ -57,12 +57,16 @@ public class UserService implements UserDetailsService{
 	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
 		
 		User u= getUserByUsername(username);
-		GrantedAuthority authority;
-		if(u.getIsAdmin()==true)
-			authority=new SimpleGrantedAuthority("ROLE_ADMIN");
-		else
-			authority=new SimpleGrantedAuthority("ROLE_USER");
-		return new org.springframework.security.core.userdetails.User(u.getUsername(), u.getPassword(), Arrays.asList(authority));
-
+		if(u.getConfirmed()) {
+			GrantedAuthority authority;
+			if(u.getIsAdmin()==true)
+				authority=new SimpleGrantedAuthority("ROLE_ADMIN");
+			else
+				authority=new SimpleGrantedAuthority("ROLE_USER");
+			return new org.springframework.security.core.userdetails.User(u.getUsername(), u.getPassword(), Arrays.asList(authority));
+		}
+		else {
+			throw new UsernameNotFoundException("The user account is not confirmed, plese confirm your account using the link in the mail!");
+		}
 	}
 }
