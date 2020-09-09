@@ -49,23 +49,23 @@ public class StockPriceController {
     	return spService.getByCompanyCodeAndSeName(company_code, se_name);
     }
     
-//    @PostMapping("/sp/company_code/duration")
-//    public List<StockPrice> getSpByCompCodeAndDuration(@RequestBody JSONObject param){
-//    	String company_code=(String)param.get("companyCode");
-//    	Timestamp start_date=(Timestamp)param.get("startDate");
-//    	Timestamp end_date=(Timestamp)param.get("endDate");
-//    	return spService.getByCompanyCodeAndDuration(company_code, start_date, end_date);
-//    }
-//    
-//    @PostMapping("/sp/company_code/se_name/duration")
-//    public List<StockPrice> getSpByCompCodeAndSeNameAndDuration(@RequestBody JSONObject param){
-//    	String company_code=(String)param.get("companyCode");
-//    	String se_name=(String)param.get("seName");
-//    	Timestamp start_date=(Timestamp)param.get("startDate");
-//    	Timestamp end_date=(Timestamp)param.get("endDate");
-//    	return spService.getByCompanyCodeAndSeNameAndDuration(company_code, se_name, start_date, end_date);
-//    }
-//    
+    @PostMapping("/sp/company_code/duration")
+    public List<StockPrice> getSpByCompCodeAndDuration(@RequestBody JSONObject param){
+    	String company_code=(String)param.get("companyCode");
+    	Timestamp start_date=Timestamp.valueOf((String)param.get("startDate"));
+    	Timestamp end_date=Timestamp.valueOf((String)param.get("endDate"));
+    	return spService.getByCompanyCodeAndDuration(company_code, start_date, end_date);
+    }
+    
+    @PostMapping("/sp/company_code/se_name/duration")
+    public List<StockPrice> getSpByCompCodeAndSeNameAndDuration(@RequestBody JSONObject param){
+    	String company_code=(String)param.get("companyCode");
+    	String se_name=(String)param.get("seName");
+    	Timestamp start_date=Timestamp.valueOf((String)param.get("startDate"));
+    	Timestamp end_date=Timestamp.valueOf((String)param.get("endDate"));
+    	return spService.getByCompanyCodeAndSeNameAndDuration(company_code, se_name, start_date, end_date);
+    }
+    
     @GetMapping("/sp/latest_sp/{company_code}")
     public StockPrice getLatestSpByCompanyCode(@PathVariable String company_code) {
     	return spService.getLatestStockOfCompanyCode(company_code);

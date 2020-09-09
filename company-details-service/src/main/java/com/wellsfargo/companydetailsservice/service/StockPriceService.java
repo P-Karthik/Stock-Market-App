@@ -38,11 +38,11 @@ public class StockPriceService {
     }
     
     public List<StockPrice> getByCompanyCodeAndDuration(String company_code,Timestamp start_date,Timestamp end_date){
-    	return spRepo.findByCompanyCodeAndDateGreaterThanEqualAndDateLessThanEqual(company_code, start_date, end_date);
+    	return spRepo.findByCompanyCodeAndDateBetween(company_code, start_date, end_date);
     }
     
     public List<StockPrice> getByCompanyCodeAndSeNameAndDuration(String company_code,String se_name,Timestamp start_date,Timestamp end_date){
-    	return spRepo.findByCompanyCodeAndSeNameAndDateGreaterThanEqualAndDateLessThanEqual(company_code, se_name, start_date, end_date);
+    	return spRepo.findByCompanyCodeAndSeNameAndDateBetween(company_code, se_name, start_date, end_date);
   
     }
     

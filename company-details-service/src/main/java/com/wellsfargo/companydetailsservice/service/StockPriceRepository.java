@@ -12,8 +12,8 @@ public interface StockPriceRepository extends CrudRepository<StockPrice,Long>{
 		List<StockPrice> findByCompanyCode(String company_code);
 		List<StockPrice> findBySeName(String se_name);
 		List<StockPrice> findByCompanyCodeAndSeName(String company_code,String se_name);
-		List<StockPrice> findByCompanyCodeAndDateGreaterThanEqualAndDateLessThanEqual(String company_code,Timestamp startDate, Timestamp endDate);
-		List<StockPrice> findByCompanyCodeAndSeNameAndDateGreaterThanEqualAndDateLessThanEqual(String company_code,String se_name, Timestamp startDate, Timestamp endDate);
+		List<StockPrice> findByCompanyCodeAndDateBetween(String company_code,Timestamp startDate, Timestamp endDate);
+		List<StockPrice> findByCompanyCodeAndSeNameAndDateBetween(String company_code,String se_name, Timestamp startDate, Timestamp endDate);
 		StockPrice findFirstByCompanyCodeOrderByDateDesc(String company_code);
 		void deleteByCompanyCode(String company_code);
 		void deleteBySeName(String se);
