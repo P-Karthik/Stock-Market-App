@@ -70,4 +70,8 @@ public class StockPriceService {
     	return spRepo.findByCompanyCodeAndSeNameAndDate(company_code, se_name, date);
     }
 
+	public void addStockPriceList(List<StockPrice> sp) {
+		spRepo.saveAll(sp);		
+	}
+
 }
