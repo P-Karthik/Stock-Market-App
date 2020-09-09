@@ -76,6 +76,14 @@ public class StockPriceController {
     	spService.addStockPrice(sp);
     }
     
+    @PostMapping("/sp/addlist")
+    public String addSp(@RequestBody List<StockPrice> sp) throws Exception{
+    	spService.addStockPriceList(sp);
+    	return "Successful!";
+    }
+    
+    
+    
     @PutMapping("/sp/update")
     public void updateSp(@RequestBody StockPrice sp) {
     	spService.addStockPrice(sp);
